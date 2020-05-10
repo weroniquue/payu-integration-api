@@ -27,6 +27,7 @@ router.post('/pay', function(req, res, next) {
 	require('request').post(
 			options,
 			function(error, response, body){
+				res.setHeader('Access-Control-Allow-Origin', '*');
 				if (error) {
 					res.send({error: "something went wrong"});
 				}
